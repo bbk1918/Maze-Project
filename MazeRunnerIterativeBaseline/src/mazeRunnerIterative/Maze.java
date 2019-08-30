@@ -198,6 +198,42 @@ public class Maze extends Canvas {
 		
 		// These two comments and the following return must be replaced with the method's code as
 		// specified in the assignment
+		//we will make the cell empty to make the move
+		if (board[r - 1][c] == ' ' && board[r][c - 1] == ' ') {
+		nextRow = r;
+		nextCol = c - 1;
+		return true;
+		}
+				
+		// We will try to move the cell up.
+		if (board[r - 1][c] == ' ') {
+		nextRow = r - 1;
+		nextCol = c;
+		return true;
+		}
+		
+		// We will try to move the cell to the right.
+		else if (board[r][c + 1] == ' ') {
+		nextRow = r;
+		nextCol = c + 1;
+		return true;
+		}
+				
+		// We will try to move the cell to the left.
+		else if (board[r][c - 1] == ' ') {
+		nextRow = r;
+		nextCol = c - 1;
+		return true;
+		}
+				
+		// We will try to move the cell down.
+		else if (board[r + 1][c] == ' ') {
+		nextRow = r + 1;
+		nextCol = c;
+		return true;
+		}
+				
+		System.out.println("Error due to Array Bound Index");
 		return false;
 	}
 	
